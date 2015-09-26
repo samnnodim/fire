@@ -11,5 +11,8 @@
 <template name="hello">
   <button>Click Me</button>
   <p>You've pressed the button {{counter}} times.</p>
-  <p><input type="file" name="…" class="myFileInput"></p>
+  <p><input type="file" name="" class="myFileInput"></p>
+  {{#each images}}
+  	<img src="{{this.url store='images'}}" alt="???">
+  {{/each}}
 </template>
