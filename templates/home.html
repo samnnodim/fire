@@ -14,10 +14,6 @@
 <template name="home">
 	<div class="text-center vertical-center">
 		<h1>FIRE</h1>
-		{{#if link}}
-			{{> loading}}
-		{{else}}
-			{{> form}}
-		{{/if}}
+		{{> yield "center"}}
 	</div>
 </template>
