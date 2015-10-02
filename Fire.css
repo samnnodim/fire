@@ -25,9 +25,13 @@ h1 {
 	background-color: #EF4836;
 }
 
+.progress {
+	margin: 0 auto;
+	width: 30em;
+}
+
 .progress-bar {
 	background-color: #EF4836;
-	width: 0%;
   -webkit-transition: none !important;
   transition: none !important;
 }

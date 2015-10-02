@@ -53,6 +53,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.loading.helpers({
+    status: function () {
+      return Session.get('status');
+    }
+  })
+
   Template.hello.events({
     'click button': function () {
       // increment the counter when button is clicked
@@ -82,9 +88,13 @@ if (Meteor.isClient) {
   Template.loading.rendered = function() {
     if(!this._rendered) {
       this._rendered = true;
+      Session.set("status", "Analyzing heat content...")
       $(".progress-bar").animate({
         width: "100%"
-      }, 1000);
+      }, 1000, function() {
+        Session.set("status", "Done.")
+      });
+      
       console.log("Template rendered");
     }
   }

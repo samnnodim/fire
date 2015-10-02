@@ -5,9 +5,7 @@
 
 <body>
   <div class="container-fluid">
-  	<div class="cover-heading">
-  		{{> home}}
-  	</div>
+  	{{> home}}
   </div>
 </body>
 
@@ -23,18 +21,33 @@
 </template>
 
 <template name="form">
-	<p class="lead">Insert your mixtape below.</p>
-	<div class="input-group">
-		<input type="text" class="form-control" placeholder="Enter a link">
-		<span class="input-group-btn">
-			<button class="btn btn-default form-button" type="button">GO</button>
-		</span>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<p class="lead">Insert your mixtape below.</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Enter a link">
+				<span class="input-group-btn">
+					<button class="btn btn-default form-button" type="button">GO</button>
+				</span>
+			</div>
+		</div>
 	</div>
 </template>
 
 <template name="loading">
-	<div class="progress">
-		<div class="progress-bar" role="progressbar">
+	<div class="row">
+		<p class="lead">{{status}}</p>
+	</div>
+
+	<div class="row">
+		<div class="progress">
+			<div class="progress-bar" role="progressbar">
+			</div>
 		</div>
 	</div>
 </template>
