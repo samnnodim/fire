@@ -16,3 +16,4 @@ tomi:upload-server
 tomi:upload-jquery
 jquery
 twbs:bootstrap
+iron:router
