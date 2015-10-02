@@ -47,6 +47,12 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.home.helpers({
+    link: function () {
+      return Session.get('link');
+    }
+  });
+
   Template.hello.events({
     'click button': function () {
       // increment the counter when button is clicked
@@ -64,6 +70,24 @@ if (Meteor.isClient) {
       });
     }
   });
+
+  Template.form.events({
+    'click .form-button': function(event) {
+      event.preventDefault();
+      Session.set('link', true);
+      console.log("Mixtape detected");
+    }
+  });
+
+  Template.loading.rendered = function() {
+    if(!this._rendered) {
+      this._rendered = true;
+      $(".progress-bar").animate({
+        width: "100%"
+      }, 1000);
+      console.log("Template rendered");
+    }
+  }
 }
 
 if (Meteor.isServer) {

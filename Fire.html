@@ -6,22 +6,36 @@
 <body>
   <div class="container-fluid">
   	<div class="cover-heading">
-  		<div class="text-center vertical-center">
-	  		<h1>Fire</h1>
-	  		<p class="lead">Fire is simple, easy, and rapidly spreading.
-	  		</p>
-	  		{{> form}}
-	  	</div>
+  		{{> home}}
   	</div>
   </div>
 </body>
 
+<template name="home">
+	<div class="text-center vertical-center">
+		<h1>FIRE</h1>
+		{{#if link}}
+			{{> loading}}
+		{{else}}
+			{{> form}}
+		{{/if}}
+	</div>
+</template>
+
 <template name="form">
+	<p class="lead">Insert your mixtape below.</p>
 	<div class="input-group">
 		<input type="text" class="form-control" placeholder="Enter a link">
 		<span class="input-group-btn">
-			<button class="btn btn-default" type="button">FIRE</button>
+			<button class="btn btn-default form-button" type="button">GO</button>
 		</span>
+	</div>
+</template>
+
+<template name="loading">
+	<div class="progress">
+		<div class="progress-bar" role="progressbar">
+		</div>
 	</div>
 </template>
 
