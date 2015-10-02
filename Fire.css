@@ -1,1 +1,40 @@
 /* CSS declarations go here */
+* {
+	font-family: 'Open Sans'
+	font-weight: 400;
+}
+
+h1 {
+	letter-spacing: 5px;
+	font-size: 400%;
+	font-weight: 600;
+}
+
+.input-group .form-control {
+	text-align: right;
+}
+
+.input-group .form-button {
+	background-color: #2A2A2A;
+	color: #EEEEEE;
+	outline: 0 !important;
+}
+
+.input-group .form-button:active {
+	color: #EEEEEE;
+	background-color: #EF4836;
+}
+
+.progress-bar {
+	background-color: #EF4836;
+	width: 0%;
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
