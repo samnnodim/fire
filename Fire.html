@@ -1,12 +1,29 @@
 <head>
-  <title>Fire</title>
+  <title>FIRE</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <h1>Fire</h1>
-
-  {{> hello}}
+  <div class="container-fluid">
+  	<div class="cover-heading">
+  		<div class="text-center vertical-center">
+	  		<h1>Fire</h1>
+	  		<p class="lead">Fire is simple, easy, and rapidly spreading.
+	  		</p>
+	  		{{> form}}
+	  	</div>
+  	</div>
+  </div>
 </body>
+
+<template name="form">
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="Enter a link">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button">FIRE</button>
+		</span>
+	</div>
+</template>
 
 <template name="hello">
   <button>Click Me</button>

@@ -1,1 +1,22 @@
 /* CSS declarations go here */
+* {
+	font-family: 'Open Sans'
+	font-weight: 400;
+}
+
+h1 {
+	letter-spacing: 5px;
+	font-size: 400%;
+	font-weight: 600;
+}
+
+.form-control {
+	text-align: right;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
