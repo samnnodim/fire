@@ -17,10 +17,10 @@ if (Meteor.isClient) {
     'submit #form-submit' : function(event) {
       //validate that submitted text is a URL
       if(lsContext.validate({url: event.target.link.value})) {
-        Session.set("invalidLink", false);
+        $('.invalid-warning').css("visibility", "nhidden");
         Session.set("link", true);
       } else {
-        Session.set("invalidLink", true);
+        $('.invalid-warning').css("visibility", "visible");
       }
     }
   });

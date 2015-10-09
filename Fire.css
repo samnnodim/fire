@@ -1,12 +1,9 @@
-* {
-	color: #FFFFFF;
-}
-
 body {
 	background-color: #000000;
 }
 
 h1 {
+	color: #FFFFFF;
 	letter-spacing: 5px;
 	font-size: 500%;
 	font-weight: 600;
@@ -48,14 +45,18 @@ h2 {
 	background-color: #EF4836;
 	border-color: #EF4836;
 	color: #FFFFFF;
+	outline: 0 !important;
 }
 
 .input-group .form-button:active {
 	background-color: #BC392A;
+	border-color: #BC392A;
+	color: #EEEEEE;
 }
 
 .invalid-warning {
-	color: #C0392B;
+	color: #EF4836;
+	visibility: hidden;
 }
 
 .progress {
@@ -68,6 +69,10 @@ h2 {
   transition: none;
 	-webkit-transition: none;
 	-moz-transition: none;
+}
+
+.result {
+	color: #FFFFFF;
 }
 
 .vertical-center {
