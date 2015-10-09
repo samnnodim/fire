@@ -12,6 +12,11 @@ if (Meteor.isClient) {
     'click .form-button': function(event) {
       event.preventDefault();
       Session.set("link", true);
+    },
+    'keypress .form-control': function(event) {
+      if(event.which===13) { //enter or return key pressed
+        Session.set("link", true);
+      }
     }
   });
 
