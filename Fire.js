@@ -33,7 +33,7 @@ if (Meteor.isClient) {
 
   Template.result.helpers({
     state: function () {
-      var heat_levels = ["SMOKEY BEAR-LEVEL SHIT", "BOILING WATER RIGHT THERE", "MODERATELY COOL FLAME", "NON-FIRE BULLSHIT, TAKE THAT BACK WHERE YOU FOUND IT"];
+      var heat_levels = ["SMOKEY BEAR-LEVEL SHIT. IT IS FIRE.", "QUIETLY BOILING WATER, MAYBE NEXT TIME", "ICE COLD BULLSHIT, TAKE THAT BACK WHERE YOU FOUND IT"];
       return heat_levels[Math.floor(Math.random()*heat_levels.length)];
     }
   })

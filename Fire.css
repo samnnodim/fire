@@ -1,5 +1,5 @@
 body {
-	background-color: #000000;
+	background-color: #1A1A1A;
 	font-family: 'Roboto', 'sans-serif';
 }
 
@@ -61,6 +61,8 @@ h2 {
 }
 
 .progress {
+	background-color: #FFFFFF;
+	border-color: #EF4836;
 	margin: 0 auto;
 	width: 30em;
 }
