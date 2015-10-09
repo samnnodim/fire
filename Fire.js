@@ -1,7 +1,12 @@
-if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+var LinkSchema = new SimpleSchema({
+  url: {
+    type: String,
+    regEx: SimpleSchema.RegEx.Url
+  }
+});
+var lsContext = LinkSchema.newContext();
 
+if (Meteor.isClient) {
   Template.home.helpers({
     link: function () {
       return Session.get('link');
@@ -9,13 +14,13 @@ if (Meteor.isClient) {
   });
 
   Template.form.events({
-    'click .form-button': function(event) {
-      event.preventDefault();
-      Session.set("link", true);
-    },
-    'keypress .form-control': function(event) {
-      if(event.which===13) { //enter or return key pressed
+    'submit #form-submit' : function(event) {
+      //validate that submitted text is a URL
+      if(lsContext.validate({url: event.target.link.value})) {
+        Session.set("invalidLink", false);
         Session.set("link", true);
+      } else {
+        Session.set("invalidLink", true);
       }
     }
   });

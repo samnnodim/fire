@@ -25,6 +25,10 @@ h1 {
 	background-color: #EF4836;
 }
 
+.invalid-warning {
+	color: #C0392B;
+}
+
 .progress {
 	margin: 0 auto;
 	width: 30em;
