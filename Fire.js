@@ -31,7 +31,7 @@ if (Meteor.isClient) {
       Session.set("status", "Analyzing heat content...")
       $(".progress-bar").animate({
         width: "100%"
-      }, 1000, function () {
+      }, 500, function () {
         window.location.href="/result";
       });
     }
