@@ -1,5 +1,6 @@
 body {
 	background-color: #000000;
+	font-family: 'Roboto', 'sans-serif';
 }
 
 h1 {
@@ -55,7 +56,7 @@ h2 {
 }
 
 .invalid-warning {
-	color: #EF4836;
+	color: #FFFFFF;
 	visibility: hidden;
 }
 

@@ -1,7 +1,7 @@
 var LinkSchema = new SimpleSchema({
   url: {
     type: String,
-    regEx: SimpleSchema.RegEx.Url
+    regEx: SimpleSchema.RegEx.Domain
   }
 });
 var lsContext = LinkSchema.newContext();
