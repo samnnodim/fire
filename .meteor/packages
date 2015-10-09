@@ -17,4 +17,5 @@ tomi:upload-jquery
 jquery
 twbs:bootstrap
 iron:router
+themeteorchef:jquery-validation
 aldeed:simple-schema
