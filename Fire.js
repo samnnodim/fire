@@ -16,7 +16,16 @@ if (Meteor.isClient) {
   Template.form.events({
     'submit #form-submit' : function(event) {
       //validate that submitted text is a URL
-      if(lsContext.validate({url: event.target.link.value})) {
+      var url = event.target.link.value;
+      var domain = "";
+      if (url.indexOf("://") > -1) {
+        domain = url.split('/')[2];
+      } else {
+          domain = url.split('/')[0];
+      }
+      domain = domain.split(':')[0];
+
+      if(lsContext.validate({"url": domain})) {
         $('.invalid-warning').css("visibility", "nhidden");
         Session.set("link", true);
       } else {
