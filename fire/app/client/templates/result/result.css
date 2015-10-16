@@ -1,0 +1,18 @@
+/*****************************************************************************/
+/* Result: Style */
+/*****************************************************************************/
+
+#fire-button {
+	margin-top: 20px;
+	color: #FFFFFF;
+	background-color: #EF4836;
+	border: none;
+}
+
+#fire-button:active {
+	background-color: #BC392A;
+}
+
+.result {
+	color: #FFFFFF;
+}
