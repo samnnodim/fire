@@ -1,0 +1,35 @@
+/*****************************************************************************/
+/* Form: Style */
+/*****************************************************************************/
+
+.input-group .form-control, .form-control:focus {
+	outline: 0;
+	border-color: #CCCCCC;
+	text-align: right;
+	box-shadow: none;
+	transition: none;
+  -webkit-box-shadow: none;
+	-webkit-transition: none;
+  -moz-box-shadow: none;
+  -moz-transition: none;
+}
+
+.input-group .form-button {
+	text-align: right;
+	background-color: #EF4836;
+	border-color: #EF4836;
+	color: #FFFFFF;
+	outline: 0 !important;
+}
+
+.input-group .form-button:active {
+	background-color: #BC392A;
+	border-color: #BC392A;
+	color: #EEEEEE;
+}
+
+.invalid-warning {
+	color: #FFFFFF;
+	visibility: hidden;
+}
+

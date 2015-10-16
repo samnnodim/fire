@@ -1,0 +1,18 @@
+/*****************************************************************************/
+/* Loading: Style */
+/*****************************************************************************/
+
+.progress {
+	background-color: #FFFFFF;
+	border: none;
+	margin: 0 auto;
+	width: 30em;
+}
+
+.progress-bar {
+	background-color: #EF4836;
+	border: 2px solid #EF4836;
+  transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+}

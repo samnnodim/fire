@@ -1,0 +1,30 @@
+/*****************************************************************************/
+/* main: Style */
+/*****************************************************************************/
+
+* {
+	background-color: #1A1A1A;
+	font-family: 'Roboto', 'sans-serif';
+}
+
+h1 {
+	color: #FFFFFF;
+	letter-spacing: 5px;
+	font-size: 500%;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+h2 {
+	letter-spacing: 5px;
+	font-size: 400%;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
