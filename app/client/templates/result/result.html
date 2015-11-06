@@ -1,9 +1,14 @@
 <template name="Result">
- 	<div id="player"></div>
  	<br>
  	<div class="result">
 		<p class="lead">You uploaded some</p>
  		<h2>{{state}}</h2>
+
+ 		<div id="player">
+ 			{{> Player}}
+ 		</div>
+ 		<br>
+
     <a class="btn btn-default" id="fire-button" href="/">START ANOTHER FIRE</a>
  	</div>
 </template>
