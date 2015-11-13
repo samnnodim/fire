@@ -27,15 +27,7 @@ Template.Form.events({
     if(lsContext.validate({"url": domain})) {
       $('.invalid-warning').css("visibility", "hidden");
       Session.set('link', true);
-
-      // YouTube API call
-      var requestUrl = "https://www.googleapis.com/youtube/v3/videos?id="
-        + url.substring(Session.get('url').indexOf("v=") + 2) + "&key=" + YOUTUBE_API_KEY + "&part=snippet&callback=?";
-      $.getJSON(requestUrl, function (data) {
-        Session.setPersistent("data", data)
-      });
     } else {
-
       // If not a valid URL, tell the user
       $('.invalid-warning').css("visibility", "visible");
     }

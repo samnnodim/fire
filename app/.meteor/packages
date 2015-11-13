@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 aldeed:simple-schema
 twbs:bootstrap
+u2622:persistent-session
+adrianliaw:youtube-iframe-api
