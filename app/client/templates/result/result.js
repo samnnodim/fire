@@ -25,9 +25,6 @@ Template.Result.helpers({
 /* Result: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Result.onCreated(function () {
-
-	// YouTube Data API call
-	Meteor.call("getYouTubeData", Session.get('url'));
 });
 
 Template.Result.onRendered(function () {

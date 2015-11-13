@@ -19,7 +19,7 @@ Template.Player.onCreated(function () {
 		player = new YT.Player("player", {
 			height: "400",
 			width: "600",
-			videoId: Session.get('url').substring(Session.get('url').indexOf("v=") + 2),
+			videoId: Session.get("YouTubeId"),
 			events: {
 				onReady: function (event) {
 					event.target.playVideo()
