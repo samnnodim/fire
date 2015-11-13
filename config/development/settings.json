@@ -1,6 +1,8 @@
 {
   "public": {
   },
-
+  "private": {
+  	"YOUTUBE_API_KEY": "AIzaSyBXwvfXEMGQK-AkOgvLz35gxvnHQRR0Mdw"
+  },
   "sample": "value"
 }

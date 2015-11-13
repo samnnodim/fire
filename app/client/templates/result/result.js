@@ -25,8 +25,6 @@ Template.Result.helpers({
 /* Result: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Result.onCreated(function () {
-	console.log("https://www.googleapis.com/youtube/v3/videos?id="
-        + Session.get("url").substring(Session.get('url').indexOf("v=") + 2) + "&key=" + YOUTUBE_API_KEY + "&part=snippet&callback=?");
 	console.log(Session.get("data"));
 });
 
