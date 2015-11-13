@@ -27,7 +27,6 @@ Template.Player.onCreated(function () {
 			}
 		})
 	}
-
 	YT.load();
 });
 

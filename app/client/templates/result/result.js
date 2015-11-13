@@ -13,7 +13,7 @@ Template.Result.helpers({
   	// Levels of fire
     var heat_levels = ["SMOKEY BEAR-LEVEL SHIT. IT IS FIRE.", "QUIETLY BOILING WATER, MAYBE NEXT TIME", "ICE COLD BULLSHIT, TAKE THAT BACK WHERE YOU FOUND IT"];
 
-    // isitfire.com is fire af
+    // isitfire.com is fire af; make sure it stays that way on the results page
     if (Session.get('url').indexOf("isitfire.com") > -1)
     	return "FOREST FIRE SHIT. CAN YOU FETCH A BROTHER SOME WATER?";
     else 
@@ -25,7 +25,9 @@ Template.Result.helpers({
 /* Result: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Result.onCreated(function () {
-	console.log(Session.get("data"));
+
+	// YouTube Data API call
+	Meteor.call("getYouTubeData", Session.get('url'));
 });
 
 Template.Result.onRendered(function () {

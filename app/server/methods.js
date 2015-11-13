@@ -3,11 +3,12 @@
 /*****************************************************************************/
 
 Meteor.methods({
-	getShitFromYoutube: function() {
-	 var requestUrl = "https://www.googleapis.com/youtube/v3/videos?id="
-      + Session.get('url').substring(Session.get('url').indexOf("v=") + 2) + "&key=" + Meteor.settings.YOUTUBE_API_KEY + "&part=snippet,contentDetails,statistics,status";
-    $.getJSON(requestUrl, function (data) {
-      Session.setPersistent("data", data)
-    });
+	getYouTubeData: function(url) {
+		console.log("STARTED");
+		var requestUrl = "https://www.googleapis.com/youtube/v3/videos?id="
+    	+ url.substring(url.indexOf("v=") + 2) + "&key=" + Meteor.settings.private.YOUTUBE_API_KEY + "&part=snippet,contentDetails,statistics";
+		var asyncToSync = Meteor.wrapAsync(HTTP.get),
+			getSyncYouTubeData = asyncToSync(requestUrl);
+		return getSyncYouTubeData;
 	}
 });
