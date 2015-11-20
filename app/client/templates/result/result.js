@@ -18,6 +18,10 @@ Template.Result.helpers({
     	return "FOREST FIRE SHIT. CAN YOU FETCH A BROTHER SOME WATER?";
     else 
     	return heat_levels[Math.floor(Math.random()*heat_levels.length)];
+  },
+
+  video: function () {
+  	return (Session.get("YouTubeId") != "");
   }
 });
 

@@ -3,7 +3,14 @@
 /*****************************************************************************/
 function getYouTubeID(url) {
 	var rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
-	return url.match(rx)[1];
+	try {
+		var match = url.match(rx)[1];
+		Session.setPersistent("YouTubeId", match);
+		return match;
+	} catch(err) {
+		Session.setPersistent("YouTubeId", "");
+		return "";
+	}
 }
 
 /*****************************************************************************/
@@ -23,16 +30,19 @@ Template.Loading.helpers({
 /* Loading: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Loading.onCreated(function () {
-	Session.set("YouTubeId", getYouTubeID(Session.get('url')));
+
 
 	// YouTube Data API call
-	Meteor.call("getYouTubeData", getYouTubeID(Session.get('url')));
+	var id = getYouTubeID(Session.get("url"));
+	if(id != "") {
+		var data = Meteor.call("getYouTubeData", id);
+	}
 });
 
 Template.Loading.onRendered(function () {
   $(".progress-bar").animate({
     width: "100%"
-  }, 100, function () {
+  }, 10000, function () {
     window.location.href="/result";
   });
 });
