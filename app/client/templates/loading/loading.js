@@ -70,7 +70,6 @@ Template.Loading.onCreated(function () {
 		var requestUrl = "http://api.soundcloud.com/tracks/" + Session.get("SoundCloudId") + "&client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID;
 		HTTP.call('GET', requestUrl, {}, function(error, response) {
 			data = JSON.parse(response);
-			console.log(data);
 		});
 	}
 });
