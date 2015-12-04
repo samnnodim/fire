@@ -16,7 +16,7 @@ Template.Result.helpers({
     // isitfire.com is fire af; make sure it stays that way on the results page
     if (Session.get('url').indexOf("isitfire.com") > -1)
     	return "FOREST FIRE SHIT. CAN YOU FETCH A BROTHER SOME WATER?";
-    else 
+    else
     	return heat_levels[Math.floor(Math.random()*heat_levels.length)];
   },
 

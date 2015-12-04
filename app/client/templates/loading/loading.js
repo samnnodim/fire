@@ -25,6 +25,13 @@ function getSoundCloudId(url) {
 	}
 }
 
+function getSoundcloudID(url) {
+	var sc = /^https?:\/\/(soundcloud.com|snd.sc)\/(.*)/;
+	console.log(url.match(sc)[0]);
+	console.log(url.match(sc)[1]);
+	return url.match(sc)[1];
+}
+
 /*****************************************************************************/
 /* Loading: Event Handlers */
 /*****************************************************************************/
@@ -42,7 +49,6 @@ Template.Loading.helpers({
 /* Loading: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Loading.onCreated(function () {
-
 	// YouTube Data API call
 	var id = getYouTubeID(Session.get("url"));
 	if(id != "") {
