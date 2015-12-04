@@ -14,26 +14,23 @@ Template.Form.events({
     var url = String(event.target.text.value);
     Session.setPersistent('url', url);
 
-    // Clean up submitted text
     var domain = "";
     if (url.indexOf("://") > -1)
       domain = url.split('/')[2];
-    else 
+    else
       domain = url.split('/')[0];
-    domain = domain.split(':')[
-    0];
+    domain = domain.split(':')[0];
 
     // Check if submitted text is a valid URL
-    if(lsContext.validate({"url": domain})) {
+    if( lsContext.validate({"url": domain}) ) {
       $('.invalid-warning').css("visibility", "hidden");
       Session.set('link', true);
-    } else {
+    }else {
       // If not a valid URL, tell the user
       $('.invalid-warning').css("visibility", "visible");
     }
   }
 });
-
 /*****************************************************************************/
 /* Form: Helpers */
 /*****************************************************************************/

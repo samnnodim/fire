@@ -22,11 +22,11 @@ Template.Player.onCreated(function () {
 			videoId: Session.get("YouTubeId"),
 			events: {
 				onReady: function (event) {
-					event.target.playVideo()
+					event.target.playVideo();
 				}
 			}
-		})
-	}
+		});
+	};
 	YT.load();
 });
 

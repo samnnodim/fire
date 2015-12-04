@@ -6,6 +6,13 @@ function getYouTubeID(url) {
 	return url.match(rx)[1];
 }
 
+function getSoundcloudID(url) {
+	var sc = /^https?:\/\/(soundcloud.com|snd.sc)\/(.*)/;
+	console.log(url.match(sc)[0]);
+	console.log(url.match(sc)[1]);
+	return url.match(sc)[1];
+}
+
 /*****************************************************************************/
 /* Loading: Event Handlers */
 /*****************************************************************************/
@@ -23,10 +30,12 @@ Template.Loading.helpers({
 /* Loading: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Loading.onCreated(function () {
-	Session.set("YouTubeId", getYouTubeID(Session.get('url')));
+	//Session.set("YouTubeId", getYouTubeID(Session.get('url')));
+	Session.set("SoundcloudId", getSoundcloudID(Session.get('url')));
 
+	//Meteor.call("soundcloud_link", getSoundcloudID(Session.get('url')));
 	// YouTube Data API call
-	Meteor.call("getYouTubeData", getYouTubeID(Session.get('url')));
+	//Meteor.call("getYouTubeData", getYouTubeID(Session.get('url')));
 });
 
 Template.Loading.onRendered(function () {

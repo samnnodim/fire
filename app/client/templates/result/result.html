@@ -4,10 +4,19 @@
 		<p class="lead">You uploaded some</p>
  		<h2>{{state}}</h2>
 
+    {{#if YouTubeId}}
  		<div id="player">
  			{{> Player}}
  		</div>
  		<br>
+    {{/if}}
+
+    {{#if SoundcloudId}}
+    <div id="soundcloud">
+      {{> Soundcloud}}
+    </div>
+    <br>
+    {{/if}}
 
     <a class="btn btn-default" id="fire-button" href="/">START ANOTHER FIRE</a>
  	</div>
