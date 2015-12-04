@@ -1,22 +1,23 @@
 /*****************************************************************************/
-/* Player: Event Handlers */
+/* YouTubePlayer: Event Handlers */
 /*****************************************************************************/
-Template.Player.events({
+Template.YouTubePlayer.events({
 });
 
 /*****************************************************************************/
-/* Player: Helpers */
+/* YouTubePlayer: Helpers */
 /*****************************************************************************/
-Template.Player.helpers({
+Template.YouTubePlayer.helpers({
 });
 
 /*****************************************************************************/
-/* Player: Lifecycle Hooks */
+/* YouTubePlayer: Lifecycle Hooks */
 /*****************************************************************************/
-Template.Player.onCreated(function () {
-	console.log();
+Template.YouTubePlayer.onCreated(function () {
+	
+	// YouTube video player
 	onYouTubeIframeAPIReady = function () {
-		player = new YT.Player("player", {
+		player = new YT.Player("YouTubePlayer", {
 			height: "400",
 			width: "600",
 			videoId: Session.get("YouTubeId"),
@@ -30,8 +31,8 @@ Template.Player.onCreated(function () {
 	YT.load();
 });
 
-Template.Player.onRendered(function () {
+Template.YouTubePlayer.onRendered(function () {
 });
 
-Template.Player.onDestroyed(function () {
+Template.YouTubePlayer.onDestroyed(function () {
 });

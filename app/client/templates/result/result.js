@@ -20,8 +20,12 @@ Template.Result.helpers({
     	return heat_levels[Math.floor(Math.random()*heat_levels.length)];
   },
 
-  video: function () {
+  youtube: function () {
   	return (Session.get("YouTubeId") != "");
+  },
+
+  soundcloud: function () {
+  	return (Session.get("SoundCloudId") != "");
   }
 });
 

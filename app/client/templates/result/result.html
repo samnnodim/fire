@@ -4,9 +4,16 @@
 		<p class="lead">You uploaded some</p>
  		<h2>{{state}}</h2>
 
- 		{{#if video}}
- 		 	<div id="player">
-				{{> Player}}
+ 		{{#if youtube}}
+ 		 	<div id="youtube_player">
+				{{> YouTubePlayer}}
+			</div>
+			<br>
+		{{/if}}
+
+		{{#if soundcloud}}
+			<div id="soundcloud_player">
+				{{> SoundCloudPlayer}}
 			</div>
 			<br>
 		{{/if}}
