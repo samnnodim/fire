@@ -1,7 +1,7 @@
 /*****************************************************************************/
 /* Loading: Functions
 /*****************************************************************************/
-var heat;
+heat = 0;
 
 function getYouTubeID(url) {
 	var rx = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
@@ -17,8 +17,14 @@ function getYouTubeID(url) {
 
 function getSoundCloudId(url) {
 	if(url.indexOf("soundcloud.com") > -1) {
-		Session.setPersistent("SoundCloudId", url);
-		return url;
+		var trackId;
+		Meteor.http.call("GET", "https://api.soundcloud.com/resolve.json?url="
+		+ Session.get("url") + "&client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID,
+ 		function (error, response) {
+    	trackId = JSON.parse(response.content).id;
+    	Session.setPersistent("SoundCloudId", trackId);
+    });
+		return Session.get("SoundCloudId");
 	} else {
 		Session.setPersistent("SoundCloudId", "");
 		return "";
@@ -58,23 +64,16 @@ Template.Loading.onCreated(function () {
 	// SoundCloud Data API Call
 	var id = getSoundCloudId(Session.get("url"));
 	if(id != "") {
-
-		// Get track id from url
-		Meteor.http.call("GET", "https://api.soundcloud.com/resolve.json?url="
-		+ Session.get("url") + "&client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID,
- 		function (error, response) {
-    	var trackId = JSON.parse(response.content).id;
-    	Session.setPersistent("SoundCloudId", trackId);
-    });
-
-		var requestUrl = "http://api.soundcloud.com/tracks/" + Session.get("SoundCloudId") + "&client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID;
+		var requestUrl = "http://api.soundcloud.com/tracks/" + id + "?client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID;
 		HTTP.call('GET', requestUrl, {}, function(error, response) {
-			data = JSON.parse(response);
+			data = JSON.parse(response.content);
+			heat = data.comment_count + data.favoritings_count + data.playback_count;
 		});
 	}
 });
 
 Template.Loading.onRendered(function () {
+	Session.setPersistent("heat", heat);
   $(".progress-bar").animate({
     width: "100%"
   }, 500, function () {
