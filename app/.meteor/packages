@@ -21,7 +21,9 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 aldeed:simple-schema
 twbs:bootstrap
-u2622:persistent-session
 adrianliaw:youtube-iframe-api
 http
 meteorhacks:async
+ejson
+oembed:jquery-oembed-all
+u2622:persistent-session

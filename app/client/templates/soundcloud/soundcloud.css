@@ -1,0 +1,14 @@
+/*****************************************************************************/
+/* Soundcloud: Style */
+/*****************************************************************************/
+.soundcloud {
+}
+
+.oembedall-closehide{
+  visibility: hidden;
+}
+
+.oembedall-container{
+  width: 400px;
+  height: auto;
+}
