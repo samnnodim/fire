@@ -3,20 +3,21 @@
  	<div class="result">
 		<p class="lead">You uploaded some</p>
  		<h2>{{state}}</h2>
-
-    {{#if YouTubeId}}
- 		<div id="player">
- 			{{> Player}}
- 		</div>
  		<br>
-    {{/if}}
 
-    {{#if SoundcloudId}}
-    <div id="soundcloud">
-      {{> Soundcloud}}
-    </div>
-    <br>
-    {{/if}}
+ 		{{#if youtube}}
+ 		 	<div id="youtube_player">
+				{{> YouTubePlayer}}
+			</div>
+			<br>
+		{{/if}}
+
+		{{#if soundcloud}}
+			<div id="soundcloud_player">
+				{{> SoundCloudPlayer}}
+			</div>
+			<br>
+		{{/if}}
 
     <a class="btn btn-default" id="fire-button" href="/">START ANOTHER FIRE</a>
  	</div>

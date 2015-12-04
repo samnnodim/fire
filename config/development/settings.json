@@ -1,8 +1,8 @@
 {
   "public": {
+  	"SOUNDCLOUD_CLIENT_ID": "12783818147107a196a6f75653f13c1d",
+  	"YOUTUBE_API_KEY": "AIzaSyAoelznBe5r7XlXYoLmYiWL6xES69_a-6Q"
   },
   "private": {
-  	"YOUTUBE_API_KEY": "AIzaSyBXwvfXEMGQK-AkOgvLz35gxvnHQRR0Mdw",
-    "soundcloud" : "f9f39b54dd0219f290d60edcb54e4e85"
   }
 }
