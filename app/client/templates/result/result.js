@@ -21,11 +21,11 @@ Template.Result.helpers({
   },
 
   youtube: function () {
-  	return (Session.get("YouTubeId") != "");
+  	return Session.get("YouTubeId") != "";
   },
 
   soundcloud: function () {
-  	return (Session.get("SoundCloudId") != "");
+  	return Session.get("SoundCloudId") != "";
   }
 });
 

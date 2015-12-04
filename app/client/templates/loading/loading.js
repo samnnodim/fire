@@ -25,13 +25,6 @@ function getSoundCloudId(url) {
 	}
 }
 
-function getSoundcloudID(url) {
-	var sc = /^https?:\/\/(soundcloud.com|snd.sc)\/(.*)/;
-	console.log(url.match(sc)[0]);
-	console.log(url.match(sc)[1]);
-	return url.match(sc)[1];
-}
-
 /*****************************************************************************/
 /* Loading: Event Handlers */
 /*****************************************************************************/
@@ -49,18 +42,37 @@ Template.Loading.helpers({
 /* Loading: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Loading.onCreated(function () {
+	
 	// YouTube Data API call
 	var id = getYouTubeID(Session.get("url"));
 	if(id != "") {
+		Session.setPersistent("YouTubeId", id);
 		var requestUrl = "https://www.googleapis.com/youtube/v3/videos?id="
     	+ id + "&key=" + Meteor.settings.public.YOUTUBE_API_KEY + "&part=statistics";
 		HTTP.call('GET', requestUrl, {}, function(error, response) {
 			data = JSON.parse(response.content).items[0].statistics;
-			heat = data.viewCount + likeCount - dislikeCount + favoriteCount + commentCount;
+			heat = data.viewCount + data.likeCount - data.dislikeCount + data.favoriteCount + data.commentCount;
 		});
 	}
 
+	// SoundCloud Data API Call
 	var id = getSoundCloudId(Session.get("url"));
+	if(id != "") {
+
+		// Get track id from url
+		Meteor.http.call("GET", "https://api.soundcloud.com/resolve.json?url="
+		+ Session.get("url") + "&client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID,
+ 		function (error, response) {
+    	var trackId = JSON.parse(response.content).id;
+    	Session.setPersistent("SoundCloudId", trackId);
+    });
+
+		var requestUrl = "http://api.soundcloud.com/tracks/" + Session.get("SoundCloudId") + "&client_id=" + Meteor.settings.public.SOUNDCLOUD_CLIENT_ID;
+		HTTP.call('GET', requestUrl, {}, function(error, response) {
+			data = JSON.parse(response);
+			console.log(data);
+		});
+	}
 });
 
 Template.Loading.onRendered(function () {

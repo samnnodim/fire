@@ -17,7 +17,7 @@ Template.YouTubePlayer.onCreated(function () {
 	
 	// YouTube video player
 	onYouTubeIframeAPIReady = function () {
-		player = new YT.Player("YouTubePlayer", {
+		player = new YT.Player("youtube_player", {
 			height: "400",
 			width: "600",
 			videoId: Session.get("YouTubeId"),
