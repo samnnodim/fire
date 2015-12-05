@@ -48,7 +48,6 @@ Template.Loading.helpers({
 /* Loading: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Loading.onCreated(function () {
-	
 	// YouTube Data API call
 	var id = getYouTubeID(Session.get("url"));
 	if(id != "") {
